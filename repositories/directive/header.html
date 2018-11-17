@@ -1,0 +1,58 @@
+
+  <ul id="slide-out" class="side-nav fixed center" style="width:350px">    
+    <li>
+      <div>
+        <div class="background" style="height:200px;padding-top:20px;
+          background-image:url({{param.sideMenu.background}});background-size:cover;background-position:center center">
+          <div class="logo-container z-depth-4" style="background-image:url({{param.sideMenu.icon}})">
+          </div>
+          <div class="nav-title-container">
+            <div class="nav-title-org" ng-bind="param.sideMenu.title1"></div>
+            <div class="nav-title" ng-bind="param.sideMenu.title2"></div>
+        
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div ng-if="!param.sideMenu.groups.length" style="line-height:100px">
+        No information
+      </div>
+      <ul class="collection navCollection" ng-repeat="g in param.sideMenu.groups">
+        <li class="collection-item collection-item-head main-background">
+          <i class="material-icons left" style="line-height:45px">{{g.icon}}</i><span ng-bind="g.title"></span>
+        </li>
+        <li class="collection-item" ng-repeat="list in g.list" style="background-color:{{list.active?'#f1f1f1':'#fff'}}">
+          <span ng-if="list.href">
+            <i class="material-icons left">{{list.icon}}</i>
+            <a href="{{list.href}}" target="{{list.target}}" style="color:#444" ng-bind="list.title"></a>
+          </span>
+          <span ng-if="!list.href">
+            <input type="checkbox" id="chk_{{list.id}}" class="chkLimit" ng-model="list.checked" 
+              parse-int ng-true-value="1" ng-false-value="0" />
+            <label for="chk_{{list.id}}" class="truncate" style="width:85%" ng-bind="list.title"></label>
+          </span>
+          <div ng-if="list.badge" class="right menu-badge">
+            {{list.badge}}
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li ng-if="param.sideMenu.filter">
+      <a class="waves-effect waves-light btn main-background" style="margin:5px" ng-click="onClick()">FILTER</a>
+    </li>
+  </ul>
+
+  <nav class="padding-container main-background">
+    <div class="nav-wrapper truncate">      
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#!" class="brand-logo"><span ng-bind="param.navbar.title" class="truncate"></span></a>
+      <ul class="right hide-on-med-and-down">
+        <li ng-repeat="m in param.navbar.menu">
+          <a href="{{ m.href ? m.href : '#!'}}" class="tooltipped" ng-click="onClick({callback:m.callback})" data-position="left" data-tooltip="{{m.title}}">
+            <i class="material-icons">{{m.icon}}</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>

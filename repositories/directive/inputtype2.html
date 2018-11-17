@@ -1,0 +1,267 @@
+
+
+							<div class="row">							
+								<div class="input-field col s12">
+									<input placeholder="ชื่อบทความ" id="Title2" type="text" class="validate" ng-model="form.title">
+									<label>Title</label>
+								</div>				
+								<div class="input-field col s12">
+									<input placeholder="ชื่อรองบทความ" id="altTitle2" type="text" class="validate" ng-model="form.alt_title">
+									<label>Alt. Title</label>
+								</div>	
+							</div>		
+							<div class="row">				
+								<div class="input-field col s12 m6">
+									<input placeholder="ชื่อวารสาร" id="sourceTitle2" type="text" class="validate" ng-model="form.sourceTitle">
+									<label>Source Title</label>
+								</div>				
+								<div class="input-field col s12 m6">
+									<input placeholder="ชื่อรองวารสาร" id="alt_sourceTitle2" type="text" class="validate" ng-model="form.alt_sourceTitle">
+									<label>Alt. Source Title</label>
+								</div>				
+							</div>
+							<div class="row">
+								<div class="input-field col s12 m6">
+									<input placeholder="ผู้แต่ง" id="creator2" type="text" class="validate" ng-model="form.creator">
+									<label style="width:100px">Creator</label>
+								</div>
+								<div class="input-field col s12 m6">
+									<input placeholder="สำนักพิมพ์" id="publisher2" type="text" class="validate" ng-model="form.publisher">
+									<label style="width:100px" for="publisher2">Publication</label>
+								</div>
+							</div>
+
+							<div class="row">		
+								<div class="col s12 m6" style="padding:0px">
+									<div class="col s2" style="text-align:center;line-height:65px">
+										<a class="btn-floating btn waves-effect waves-light main-background prefix btn-add" ng-click="addList({item:'author',id:'author2'})">
+											<i class="material-icons">add</i>
+										</a>
+									</div>
+									<div class="input-field col s10">
+										<input placeholder="ผู้แต่งร่วม" id="author2" type="text" class="validate" ng-keyup="$event.keyCode == 13 ? addList({item:'author',id:'author2'}) : null">
+										<label for="author2">Authors</label>
+										<div>
+											<div ng-repeat="author in form.author" class="div-list">
+												<a href="#!" style="color:#f00;line-height:1.6em" ng-click="rmList({item:'author',i:$index})"><i class="material-icons left">clear</i></a>
+												{{author.label}}
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col s12 m6" style="padding:0px">
+									<div class="col s2" style="text-align:center;line-height:65px">
+										<a class="btn-floating btn waves-effect waves-light main-background prefix btn-add" ng-click="addList({item:'subject',id:'subject2'})">
+											<i class="material-icons">add</i>
+										</a>
+									</div>
+									<div class="input-field col s10">
+										<input placeholder="หัวเรื่อง" id="subject2" type="text" class="validate" ng-keyup="$event.keyCode == 13 ? addList({item:'subject',id:'subject2'}) : null">
+										<label for="subject2">Subjects</label>
+										<div>
+											<div ng-repeat="subject in form.subject" class="div-list">
+												<a href="#!" style="color:#f00;line-height:1.6em" ng-click="rmList({item:'subject',i:$index})"><i class="material-icons left">clear</i></a>
+												{{subject.label}}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+							<div class="row">				
+								<div class="col s12 m6" style="padding:0px">
+									<div class="col s2" style="text-align:center;line-height:65px">
+										<a class="btn-floating btn waves-effect waves-light main-background prefix btn-add" ng-click="addList({item:'keyword',id:'keyword2'})">
+											<i class="material-icons">add</i>
+										</a>
+									</div>
+									<div class="input-field col s10">
+										<input placeholder="คำค้น" id="keyword2" type="text" class="validate" ng-keyup="$event.keyCode == 13 ? addList({item:'keyword',id:'keyword2'}) : null">
+										<label for="keyword2">Keyword</label>
+										<div>
+											<div ng-repeat="keyword in form.keyword" class="div-list">
+												<a href="#!" style="color:#f00;line-height:1.6em" ng-click="rmList({item:'keyword',i:$index})"><i class="material-icons left">clear</i></a>
+												{{keyword.label}}
+											</div>
+										</div>
+									</div>	
+								</div>			
+								<div class="col s12 m6" style="padding:0px">
+									<div class="col s2" style="text-align:center;line-height:65px">
+										<a class="btn-floating btn waves-effect waves-light main-background prefix btn-add" ng-click="addList({item:'contributor',id:'contributor2'})">
+											<i class="material-icons">add</i>
+										</a>
+									</div>
+									<div class="input-field col s10">
+										<input placeholder="หน่วยงานที่เกี่ยวข้อง" id="contributor2" type="text" class="validate" ng-keyup="$event.keyCode == 13 ? addList({item:'contributor',id:'contributor2'}) : null">
+										<label for="contributor2">Affiliations</label>
+										<div>
+											<div ng-repeat="affil in form.contributor" class="div-list">
+												<a href="#!" style="color:#f00;line-height:1.6em" ng-click="rmList({item:'contributor',i:$index})"><i class="material-icons left">clear</i></a>
+												{{affil.label}}
+											</div>
+										</div>
+									</div>	
+								</div>
+							</div>
+							
+
+							<div class="row">
+								<div class="input-field col s12">
+									<textarea id="description2"  placeholder="บทคัดย่อ" ng-model="form.description" class="materialize-textarea"></textarea>
+									<label for="description2">Abstract</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="input-field col s12">
+									<textarea id="description2"  placeholder="บทคัดย่อรอง" ng-model="form.alt_description" class="materialize-textarea"></textarea>
+									<label for="description2">Alt. Abstract</label>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col s12" style="padding:0px">
+									<div class="col s2 m1" style="padding-top:15px">										
+										<a id="btn-ch-language-th-2" class="btn-floating btn waves-effect waves-light main-background btn-add btn-ch-language-th" ng-click="chLanguage({language:'th'})">
+											TH
+										</a>
+										<a id="btn-ch-language-en-2" style="display:none" class="btn-floating btn waves-effect waves-light main-background btn-add btn-ch-language-en" ng-click="chLanguage({language:'en'})">
+											EN
+										</a>
+									</div>
+
+									<div class="col s10 m3">			
+										<label>Create Day</label>
+										<select class="browser-default" ng-model="form.createDay">
+											<option value=""></option>
+											<option ng-repeat="n in getNo({start:1,end:31}) track by $index" value="{{n}}">{{n}}</option>
+										</select>
+									</div>
+									<div class="col s12 m4">			
+										<label>Create Monthy</label>
+										<select class="browser-default" ng-model="form.createMonth">
+											<option value=""></option>
+											<option ng-repeat="n in getNo({start:1,end:12}) track by $index" value="{{n}}" ng-bind="getMonth({no:n})"></option>
+										</select>
+									</div>
+									<div class="col s12 m4">			
+										<label>Create Year</label>
+										<select class="browser-default" ng-model="form.createYear">
+											<option value=""></option>
+											<option ng-repeat="n in getYearList() track by $index" value="{{n}}">{{n}}</option>
+										</select>
+									</div>	
+								</div>
+							</div>
+							
+							
+							<div class="row">
+								<div class="input-field col s6 m3">
+									<input placeholder="" id="issue2" type="text" class="validate" ng-model="form.issue">
+									<label style="width:100px" for="issue2">Issue</label>
+								</div>
+								<div class="input-field col s6 m3">
+									<input placeholder="" id="volume2" type="text" class="validate" ng-model="form.volume">
+									<label style="width:100px" for="volume2">Volume</label>
+								</div>
+								<div class="input-field col s6 m3">
+									<input placeholder="" id="doi2" type="text" class="validate" ng-model="form.doi">
+									<label style="width:100px" for="doi2">DOI</label>
+								</div>
+								<div class="input-field col s6 m3">
+									<input placeholder="" id="pageNo2" type="text" class="validate" ng-model="form.pageNo">
+									<label style="width:100px" for="pageNo2">Page No</label>
+								</div>
+							</div>
+
+							<div class="row">							
+								<div class="col s2 m1" style="text-align:center;line-height:65px">
+										<a class="btn-floating btn waves-effect waves-light main-background prefix btn-add" 
+											ng-click="switchEle({item:'genreInput'})">
+											<i class="material-icons">&#xE5D3;</i>
+										</a>
+								</div>
+
+								<div class="input-field col s10 m5" id="genre2-container" ng-if="form.genreInput && form.genreInput===true">
+									<input type="text" placeholder="ประเภท" id="genre2" ng-model="form.genreName" />
+									<label for="genre1">Genre</label>
+								</div>
+								<div class="col s10 m5" id="selgenre1-container" style="padding-bottom:14px" ng-if="!form.genreInput || form.genreInput===false">
+									<label>Genre</label>
+									<select class="browser-default" id="selgenre2" ng-model="form.genreName">
+										<option value=""></option>
+										<option ng-repeat="g in getFacet({field:'genre'}) | orderBy:genreName" value="{{g.genreName}}">{{g.genreName}}</option>
+									</select>
+								</div>
+								<!--div class="input-field col s10 m5" style="display:none" id="genre2-container">
+									<input type="text" placeholder="ประเภท" id="genre2" />
+									<label for="genre2">Genre</label>
+								</div>
+								<div class="col s10 m5" id="selgenre2-container" style="padding-bottom:14px">
+									<label>Genre</label>
+									<select class="browser-default" id="selgenre2" ng-model="form.genreName">
+										<option value="" selected></option>
+										<option ng-repeat="g in genre | orderBy:genreName" value="{{g.genreName}}">{{g.genreName}}</option>
+									</select>
+								</div-->			
+
+								<div class="col s2 m1" style="text-align:center;line-height:65px">
+										<a class="btn-floating btn waves-effect waves-light main-background prefix btn-add" ng-click="switchEle({item:'formatInput'})">
+											<i class="material-icons">&#xE5D3;</i>
+										</a>
+								</div>
+								<div class="input-field col s10 m5" id="format2-container" ng-if="form.formatInput && form.formatInput===true">
+									<input type="text" placeholder="รูปแบบ" id="format2" ng-model="form.formatName" />
+									<label for="format2">Format</label>
+								</div>
+								<div class="col s10 m5" id="selformat2-container" style="padding-bottom:14px" ng-if="!form.formatInput || form.formatInput===false">
+									<label>Format</label>
+									<select class="browser-default" id="selformat2" ng-model="form.formatName">
+										<option value="" selected></option>
+										<option ng-repeat="f in format | orderBy:formatName" value="{{f.formatName}}">{{f.formatName}}</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row">							
+								<div class="input-field col s12 m4">
+									<input type="text" placeholder="ISSN" id="isbn" ng-model="form.isbn" />
+									<label for="isbn">ISSN</label>
+								</div>			
+								<div class="input-field col s12 m4">
+									<input type="text" placeholder="หมายเลขคอนโทรล" id="controlNo2" ng-model="form.controlNo" />
+									<label for="controlNo2">Control No.</label>
+								</div>	
+								<div class="input-field col s12 m4">
+									<input type="text" placeholder="ภาษา" id="language2" ng-model="form.language" />
+									<label for="language2">Language</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="input-field col s12">
+									<textarea id="citation2" placeholder="การอ้างอิง" class="materialize-textarea" ng-model="form.citation"></textarea>
+									<label for="citation2">Bibliography Citation</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="input-field col s12">
+									<textarea id="bright2" placeholder="รายละเอียดเกี่ยวกับลิขสิทธิ์" class="materialize-textarea" ng-model="form.rights"></textarea>
+									<label for="right2">Rights</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col s12">
+									<input type="hidden" ng-model="bibId">
+									<a class="waves-effect waves-light btn-large red" ng-click="rmBib()" id="btn-save">
+										<i class="material-icons left">clear</i>Remove Bibliography
+									</a>
+									<a class="waves-effect waves-light btn-large right main-background" ng-click="saveData({form:form})" id="btn-save">
+										<i class="material-icons left">save</i>Save Bibliography
+									</a>
+								</div>
+							</div>
